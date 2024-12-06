@@ -1,0 +1,10 @@
+body {
+  background-color: #d3d3d3; /* Light grey color */
+  font-family: Arial, sans-serif; /* Optional: sets a default font for the app */
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  min-height: 100vh; /* Ensures the body takes the full height */
+}

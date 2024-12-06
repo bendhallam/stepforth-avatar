@@ -1,0 +1,44 @@
+
+
+.avatar-editor.display {
+  width: 100px;
+  height: 15vw;
+}
+
+.avatar-editor.controls {
+  margin-left: 1vw;
+  z-index: 6;
+}
+/* Common styles for all avatar parts (body, hat, shirt, etc.) */
+.avatar-part {
+  position: absolute; /* Position images relative to the container */
+  top: 0;
+  left: 0;
+  width: 100%; /* Makes the image fill the container width */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+.avatar-part {
+  height: 15vw;
+  width: auto;
+}
+
+.avatar-part.body {
+  z-index: 1; /* Body is the base layer */
+}
+.avatar-part.hat {
+  z-index: 2; /* Hat goes on top of the body */
+}
+.avatar-part.shirt {
+  z-index: 3; /* Shirt on top of body */
+}
+.avatar-part.pants {
+  z-index: 4; /* Pants on top of the body */
+}
+.avatar-part.boots {
+  z-index: 5; /* Boots on top of pants */
+}
+.avatar-part.weapon {
+  z-index: 6; /* Weapon on top of all other parts */
+}
+
