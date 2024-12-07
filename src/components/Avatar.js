@@ -5,12 +5,9 @@ const Avatar = ({ hat, shirt, pants, boots, weapon, colour }) => {
   return (
     <div className="avatar-editor display">
       <img
-        src='/assets/avatars/avatar_base.png'
+        src={`/assets/avatars/avatar_${colour}`}
         alt='body'
         className='avatar-part body'
-        style={{
-          filter: `hue-rotate(${colour}deg)` // Apply hue-rotate dynamically
-        }}
       />
       {hat !== 'none' && (
         <img

@@ -9,7 +9,7 @@ const Editor = () => {
   const [pants, setPants] = useState('none');
   const [boots, setBoots] = useState('none');
   const [weapon, setWeapon] = useState('none');
-  const [colour, setColour] = useState(0); // Store hue as a number between 0 and 360
+  const [colour, setColour] = useState('base')
 
   // Equipment options
   const hatOptions = ['none', 'hat1.png', 'hat2.png'];
@@ -17,12 +17,7 @@ const Editor = () => {
   const pantsOptions = ['none', 'pants1.png', 'pants2.png'];
   const bootsOptions = ['none', 'boots1.png', 'boots2.png'];
   const weaponOptions = ['none', 'sword1.png', 'sword2.png'];
-
-  // Handle the hue change
-  const handleColourChange = (event) => {
-    const newColour = event.target.value;
-    setColour(newColour); // Set the hue directly as a number
-  };
+  const colourOptions = ['base.png', 'blue.png', 'red.png', 'green.png', 'limegreen.png', 'orange.png', 'purple.png', 'pink.png', 'yellow.png', 'turquoise.png']
 
   return (
     <div className="avatar-editor">
@@ -32,7 +27,7 @@ const Editor = () => {
         pants={pants}
         boots={boots}
         weapon={weapon}
-        colour={colour} // Pass the hue value directly
+        colour={colour}
       />
       <div className="avatar-editor controls">
         {/* Hat Selection */}
@@ -75,16 +70,13 @@ const Editor = () => {
           </button>
         ))}
 
-        {/* Color Selection */}
-        <h3>Adjust Avatar Colour</h3>
-        <input
-          type="range"
-          min="0"
-          max="360"
-          value={colour}
-          onChange={handleColourChange}
-        />
-        <p>Hue: {colour}°</p>
+        {/* Colour Selection */}
+        <h3>Select Colour</h3>
+        {colourOptions.map((option) => (
+          <button key={option} onClick={() => setColour(option)}>
+            {option.replace('.png', '')}
+          </button>
+        ))}
       </div>
     </div>
   );
